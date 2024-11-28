@@ -1,0 +1,16 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: test-argo-app-deploy
+build:
+  artifacts:
+    - image: pocdevhub/test-argo-app-deploy
+      jib:
+        args:
+          - -Pjib
+          - -DskipTests
+manifests:
+  rawYaml:
+    - k8s/deployment.yaml
+deploy:
+  kubectl: {}

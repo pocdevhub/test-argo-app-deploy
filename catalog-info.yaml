@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-argo-app-deploy
+  title: test-argo-app-deploy
+  annotations:
+    janus-idp.io/tekton: test-argo-app-deploy
+    tektonci/build-namespace: poc-ktools
+    github.com/project-slug: pocdevhub/test-argo-app-deploy
+    sonarqube.org/project-key: pocdevhub_test-argo-app-deploy
+    backstage.io/kubernetes-id: test-argo-app-deploy
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: test-argo-app-deploy
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"test-argo-app-deploy-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"test-argo-app-deploy-.*"}[5m])|pod
+  tags:
+    - spring-boot
+    - java
+    - maven
+    - tekton
+    - argocd
+    - renovate
+    - sonarqube
+spec:
+  type: service
+  owner: piomin
+  lifecycle: experimental

@@ -1,0 +1,11 @@
+site_name: test-argo-app-deploy
+site_description: 
+repo_url: https://github.com/pocdevhub/test-argo-app-deploy
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+
+# Note for content editors, edit only the section below
+nav:
+  - test-argo-app-deploy Documentation: index.md
